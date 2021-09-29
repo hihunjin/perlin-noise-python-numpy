@@ -50,6 +50,7 @@ def generate_2D_perlin_noise(size = (200,200), ns=1):
     '''
     if type(size) == int:
         size = (size, size)
+    assert size[0]%ns==0 and size[1]%ns==0, 'divisible error. re-set node distance(ns)'
     nc = [int(size[0] / ns), int(size[1] / ns)]  # number of nodes
     grid_size_h = int(size[0] / ns + 1)  # number of points in grid
     grid_size_w = int(size[1] / ns + 1)  # number of points in grid
